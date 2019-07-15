@@ -8,7 +8,7 @@ const emojis = platform === "darwin";
 
 const statuses = {
   PASS: emojis ? "✅ [PASS]: " : "[PASS]: ",
-  FAIL: emojis ? "🛑 [FAIL]: " : "[FAIL]: "
+  FAIL: emojis ? "🛑 [FAIL]: " : "[FAIL]: ",
   FIX: emojis ? "👉 [FIX ]: " : "[FIX ]: "
 };
 
