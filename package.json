@@ -8,8 +8,6 @@
     "graphql-training-check": "check.js"
   },
   "optionalDependencies": {
-    "apollo-server": "^2.6.9",
-    "node-fetch": "^2.6.0",
     "nodemon": "^1.19.1",
     "sqlite3": "^4.0.9"
   },
