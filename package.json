@@ -3,10 +3,18 @@
   "version": "0.0.0",
   "author": "Benjie Gillam <code@benjiegillam.com>",
   "license": "AGPL-3.0",
+  "main": "check.js",
+  "bin": {
+    "graphql-training-check": "check.js"
+  },
   "dependencies": {
     "apollo-server": "^2.6.9",
     "node-fetch": "^2.6.0",
     "nodemon": "^1.19.1",
     "sqlite3": "^4.0.9"
-  }
+  },
+  "files": [
+    "check.js",
+    "checks"
+  ]
 }
