@@ -61,21 +61,23 @@ function check(moduleName, inSuccessMessage, inErrorMessage) {
 function main() {
   console.log(
     "This is the GraphQL-Training.com compatibility checker, v" +
-      packageJson.version
+      packageJson.version +
+      "."
   );
   console.log(
-    "You are running Node " + process.version + " on " + os.platform()
+    "You are running Node " + process.version + " on " + os.platform() + "."
   );
   console.log();
   console.log("Running checks...");
   console.log();
 
   Promise.resolve()
+    .then(() => check("os"))
     .then(() => check("nodeVersion"))
     .then(() =>
       check(
-        "basics",
-        "basic JS language support",
+        "modern",
+        "modern JS language support looks fine",
         "⚠️ Your version of Node does not seem to support some of the required language features. Please use Node v10 or higher."
       )
     )

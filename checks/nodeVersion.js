@@ -4,7 +4,7 @@ exports.check = () => {
     .split(".")
     .map(n => parseInt(n, 10));
   if (major > 10 || (major === 10 && minor >= 0)) {
-    return `node ${process.version} is installed`;
+    return `node ${process.version} is supported`;
   } else {
     throw new Error(
       `node ${
