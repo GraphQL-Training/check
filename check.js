@@ -92,6 +92,7 @@ function main() {
         "There seems to be an issue with running SQLite from Node; this may be an issue with your build toolchain (Mac: XCode, Linux: 'build-essential', etc)"
       )
     )
+    .then(() => check("server"))
     .then(() =>
       check(
         "nodemon",
@@ -108,6 +109,7 @@ function main() {
             ? "; everything looks good."
             : "; please solve the issues above - reach out to your instructor if you need help.")
       );
+      process.exit();
     });
 }
 

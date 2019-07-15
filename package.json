@@ -14,5 +14,10 @@
   "files": [
     "check.js",
     "checks"
-  ]
+  ],
+  "dependencies": {
+    "apollo-server": "^2.6.9",
+    "graphql": "^14.4.2",
+    "node-fetch": "^2.6.0"
+  }
 }
