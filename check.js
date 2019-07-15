@@ -84,10 +84,29 @@ function main() {
     .then(() => check("asyncAwait"))
     .then(() => check("asyncIterators"))
     .then(() => check("yarn"))
-    .then(() => check("sqlite"))
+    .then(() =>
+      check(
+        "sqlite",
+        undefined,
+        "There seems to be an issue with running SQLite from Node; this may be an issue with your build toolchain (Mac: XCode, Linux: 'build-essential', etc)"
+      )
+    )
+    .then(() =>
+      check(
+        "nodemon",
+        undefined,
+        "'nodemon' check failed; we can survive without this but fixing it will improve your experience"
+      )
+    )
     .then(() => {
+      const success = !process.exitCode;
       console.log();
-      console.log("Checking complete");
+      console.log(
+        "Checking complete" +
+          (success
+            ? "; everything looks good."
+            : "; please solve the issues above - reach out to your instructor if you need help.")
+      );
     });
 }
 

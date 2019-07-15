@@ -7,7 +7,7 @@
   "bin": {
     "graphql-training-check": "check.js"
   },
-  "dependencies": {
+  "optionalDependencies": {
     "apollo-server": "^2.6.9",
     "node-fetch": "^2.6.0",
     "nodemon": "^1.19.1",
