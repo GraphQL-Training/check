@@ -1,6 +1,6 @@
 {
   "name": "graphql-training-check",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "author": "Benjie Gillam <code@benjiegillam.com>",
   "license": "AGPL-3.0",
   "main": "check.js",
