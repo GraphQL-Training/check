@@ -9,10 +9,11 @@ exports.check = () => {
     const version = result.stdout.toString("utf8").trim();
     const [major, minor, patch] = version.split(".").map(n => parseInt(n, 10));
     if (major > 1 || (major === 1 && minor >= 15)) {
-      console.log(`✅ yarn v${version} is installed`);
+      return `yarn v${version} is installed`;
     } else {
-      process.exitCode = 1;
-      throw new Error(`⚠️ yarn v${version} is not sufficiently up to date`);
+      throw new Error(
+        `yarn v${version} is not sufficiently up to date, v1.15 or higher is required`
+      );
     }
   } catch (e) {
     e.fix = `Please run 'npm install -g yarn'`;

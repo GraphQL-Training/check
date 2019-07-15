@@ -71,6 +71,7 @@ function main() {
   console.log();
 
   Promise.resolve()
+    .then(() => check("nodeVersion"))
     .then(() =>
       check(
         "basics",
