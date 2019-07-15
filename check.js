@@ -2,6 +2,16 @@
 const os = require("os");
 const packageJson = require(`./package.json`);
 
+const platform = os.platform();
+
+const emojis = platform === "darwin";
+
+const statuses = {
+  PASS: emojis ? "✅ [PASS]: " : "[PASS]: ",
+  FAIL: emojis ? "🛑 [FAIL]: " : "[FAIL]: "
+  FIX: emojis ? "👉 [FIX ]: " : "[FIX ]: "
+};
+
 function indent(str) {
   return "  " + String(str).replace(/\n/g, "\n  ");
 }
@@ -10,12 +20,12 @@ function handleError(e, errorMessage) {
   console.error();
   console.error("____________________");
   console.error();
-  console.error("🛑 " + errorMessage);
+  console.error(statuses.FAIL + errorMessage);
   console.error();
   console.error(indent(String(e.stack || e)));
   console.error();
   if (e.fix) {
-    console.error("👉 Potential solution:");
+    console.error(statuses.FIX + "Potential solution:");
     console.error();
     console.error(indent(e.fix));
   }
@@ -26,7 +36,7 @@ function handleError(e, errorMessage) {
 }
 
 function handleSuccess(result, successMessage) {
-  console.log("✅ " + (result || successMessage));
+  console.log(statuses.PASS + (result || successMessage));
 }
 
 function check(moduleName, inSuccessMessage, inErrorMessage) {
@@ -79,7 +89,7 @@ function main() {
       check(
         "modern",
         "modern JS language support looks fine",
-        "⚠️ Your version of Node does not seem to support some of the required language features. Please use Node v10 or higher."
+        "Your version of Node does not seem to support some of the required language features. Please use Node v10 or higher."
       )
     )
     .then(() => check("asyncAwait"))

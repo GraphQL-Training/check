@@ -1,8 +1,12 @@
 const { spawnSync } = require("child_process");
+const os = require("os");
+
+const platform = os.platform();
 
 exports.check = () => {
   try {
-    const result = spawnSync("yarn", ["--version"]);
+    const yarnBinary = platform === "win32" ? "yarn.cmd" : "yarn";
+    const result = spawnSync(yarnBinary, ["--version"]);
     if (result.error) {
       throw result.error;
     }
