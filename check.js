@@ -78,8 +78,10 @@ function main() {
         "⚠️ Your version of Node does not seem to support some of the required language features. Please use Node v10 or higher."
       )
     )
-    .then(() => check("yarn"))
+    .then(() => check("asyncAwait"))
     .then(() => check("asyncIterators"))
+    .then(() => check("yarn"))
+    .then(() => check("sqlite"))
     .then(() => {
       console.log();
       console.log("Checking complete");
