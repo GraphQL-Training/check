@@ -16,7 +16,7 @@
     "checks"
   ],
   "dependencies": {
-    "apollo-server": "^2.25.3",
+    "apollo-server": "^2.25.4",
     "graphql": "^14.4.2",
     "node-fetch": "^2.6.7"
   }
